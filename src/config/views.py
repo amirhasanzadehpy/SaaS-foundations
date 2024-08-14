@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def get_wellcome_home(request, *args, **kwargs):
+def home_view(request, *args, **kwargs):
     context = {
         "word": "amir"
     }
