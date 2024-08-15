@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "commando",
     "profiles",
     "subscriptions",
+    "customers",
 
 
     "allauth_ui",
