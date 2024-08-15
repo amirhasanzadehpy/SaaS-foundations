@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{object_user.username}} - Profile
+{% endblock title %}
+    
+
+{% block content %}
+    <li>
+        username : {{object_user.username}}
+    </li>
+    <li>
+        email : {{object_user.email}}
+    </li>
+    <li>
+        date joined : {{object_user.date_joined}}
+    </li>
+    <li>
+        last login : {{object_user.last_login}}
+    </li>
+        
+{% endblock content %}
+    

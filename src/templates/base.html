@@ -3,7 +3,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>
+        {% block title %}
+            
+        {% endblock title %}
+            </title>
         {% include 'base/css.html' %}
     </head>
     <body>
