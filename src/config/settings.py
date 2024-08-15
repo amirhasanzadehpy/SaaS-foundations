@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "commando",
     "profiles",
+    "subscriptions",
 
 
     "allauth_ui",
@@ -204,3 +205,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERFIED_EMAIL': True
     }
 }
+
+# AllAuth UI 
+SILENCED_SYSTEM_CHECKS = ["slippers.E001"]
