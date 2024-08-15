@@ -42,6 +42,10 @@ ALLOWED_HOSTS = [".railway.app"]
 if DEBUG:
     ALLOWED_HOSTS += ["127.0.0.1"]
 
+CSRF_TRUSTED_ORIGINS=["https://.railway.app"]
+if DEBUG:
+    ALLOWED_HOSTS += ["127.0.0.1"]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,6 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "commando",
+    "profiles",
 
 
     "allauth_ui",
