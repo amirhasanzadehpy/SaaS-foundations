@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 
-{% block title %}
-    {{object_user.username}} - Profile
-{% endblock title %}
-    
+{% block head_title %}Users - {{ block.super }}{% endblock head_title %}
+
 
 {% block content %}
-    <li>
-        username : {{object_user.username}}
-    </li>
-    <li>
-        email : {{object_user.email}}
-    </li>
-    <li>
-        date joined : {{object_user.date_joined}}
-    </li>
-    <li>
-        last login : {{object_user.last_login}}
-    </li>
-        
+<h1 class="text-lg font-medium">{{ instance.username }}</h1>
+
+
+    {% if perms.auth or owner %}
+    {% if perms.auth.view_user or owner %}
+    <div>
+        {{ instance.first_name }} -  {{ instance.last_name }}
+        {{ instance.last_login }}
+    </div>
+    {% else %}
+    <div>You are not allowed to see this</div>
+
+    {% endif %}
+{% endif %}
+
 {% endblock content %}
-    
+

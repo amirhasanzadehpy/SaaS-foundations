@@ -1,7 +1,8 @@
 {% if messages %}
     <div>
         {% for message in messages %}
-            <div role="alert" class="flex items-center px-4 py-3 text-sm font-bald text-white bg-blue-500">
+            <div class="flex items-center px-4 py-3 text-sm font-bold text-white bg-blue-500"
+                    role="alert">
                 <p>{{ message }}</p>
             </div>
         {% endfor %}

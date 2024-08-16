@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
 
 
-{% block title %}
-    user list
-{% endblock title %}
-    
+{% block head_title %}Users - {{ block.super }}{% endblock head_title %}
+
 
 {% block content %}
-    User:
-    {% for user in object_list%}
-        <li>
-            <a href=/profile/{{user.username}}>{{user.username}}</a>
-        </li>
-    {% endfor %}
-        
+<h1 class="text-lg font-medium">Users</h1>
+
+
+    {% if perms.auth %}
+    {% if perms.auth.view_user %}
+    <div>
+            {% for instance in object_list %}
+
+            <li><a href="/profiles/{{instance.username}}">{{ instance.username }}</a></li>
+
+            {% endfor %}
+    </div>
+    {% else %}
+    <div>You are not allowed to see this</div>
+
+    {% endif %}
+{% endif %}
+
 {% endblock content %}
-    
+

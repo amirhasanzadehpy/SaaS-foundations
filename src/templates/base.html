@@ -1,24 +1,14 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-        {% block title %}
-            
-        {% endblock title %}
-            </title>
-        {% include 'base/css.html' %}
-    </head>
-    <body>
-        
-        {% include 'nav/navbar.html' %}
-        {% include 'base/messages.html' with messages=messages %}
-
-        {% include 'base/js.html' %}
-        
-        {% block content %}
-            
-        {% endblock content %}
-    </body>
+<head>
+    <title>{% block head_title %}SaaS{% endblock head_title %}</title>
+    {% include 'base/css.html' %}
+</head>
+<body>
+    {% include 'nav/navbar.html' %}
+    {% include 'base/messages.html' with messages=messages %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'base/js.html' %}
+</body>
 </html>
